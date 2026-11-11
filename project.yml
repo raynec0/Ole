@@ -1,0 +1,31 @@
+name: Ole
+options:
+  bundleIdPrefix: com.raynec
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  Ole:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+      - path: Web
+        type: folder
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.raynec.ole
+        PRODUCT_NAME: Ole
+        INFOPLIST_FILE: Support/Info.plist
+        GENERATE_INFOPLIST_FILE: "NO"
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_STRICT_CONCURRENCY: minimal
+    scheme:
+      testTargets: []
